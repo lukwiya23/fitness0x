@@ -1,10 +1,10 @@
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { useState } from "react";
 import { SelectedPage } from "@/shared/types";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 type Props = {
-  page: String;
+  page: string;
   selectedPage: SelectedPage;
-  setSelectedPage: (value: String) => void;
+  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
@@ -13,8 +13,8 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
   return (
     <AnchorLink
       className={`${selectedPage === lowerCasePage ? "text-primary-500" : ""}
-      transition duration-500 hover:text-primary-300
-    `}
+        transition duration-500 hover:text-primary-300
+      `}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
